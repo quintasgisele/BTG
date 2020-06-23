@@ -1,0 +1,37 @@
+
+public class Usuario {
+	public static int Pedra = 1;
+	public static int Papel = 2;
+	public static int Tesoura = 3;
+	private int jok;
+	
+	public Usuario(int jok) {
+		this.jok = jok;
+	}
+	
+	public int getJok() {
+		return this.jok;
+	}
+	
+	public static int game(Usuario user1, Usuario user2, 
+			Usuario user3) {
+		int jok1 = user1.getJok();
+		int jok2 = user2.getJok();
+		int jok3 = user3.getJok();
+		
+		if(jok1 == Usuario.Pedra && jok2 == Usuario.Tesoura && jok3 == Usuario.Tesoura) {
+			return 1;
+		} else if (jok1 == Usuario.Papel && jok2 == Usuario.Pedra && jok3 == Usuario.Pedra) {
+			return 1;
+		} else if  (jok1 == Usuario.Tesoura && jok2 == Usuario.Pedra && jok3 == Usuario.Pedra) {
+			return 2;
+		} else if  (jok1 == Usuario.Tesoura && jok2 == Usuario.Papel && jok3 == Usuario.Papel) {
+			return 1;
+		} else if (jok1 == Usuario.Papel && jok2 == Usuario.Tesoura && jok3 == Usuario.Tesoura) {
+			return 2;
+		} else {
+			return 0;
+		}
+	} 
+	
+}
